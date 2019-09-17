@@ -30,19 +30,21 @@ class StatisticsUtilsTest {
     @Test
     fun getActiveAndCompletedStats_error() {
         // When there's an error loading stats
-        // TODO
+        var result = getActiveAndCompletedStats(null)
 
         // Both active and completed tasks are 0
-        // TODO
+        assertThat(result.activeTasksPercent, `is`(0f))
+        assertThat(result.completedTasksPercent, `is`(0f))
     }
 
     @Test
     fun getActiveAndCompletedStats_empty() {
         // When there are no tasks
-        // TODO
+        var result = getActiveAndCompletedStats(emptyList())
 
         // Both active and completed tasks are 0
-        // TODO
+        assertThat(result.activeTasksPercent, `is`(0f))
+        assertThat(result.completedTasksPercent, `is`(0f))
     }
 
     @Test
